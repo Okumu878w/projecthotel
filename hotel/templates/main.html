@@ -1,0 +1,93 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savvy Inn</title>
+    
+    <link rel="stylesheet" href="{%static  'css/style.css'%}">
+   
+
+    
+</head>
+<body>
+    
+<div>
+    <div class="home1">
+        <div class="one"><p>contact:pokumu987@gmail.com</p></div>
+        <div class="two"><p>+254114950840</p></div>
+    </div>
+                  
+
+    <div class="home2" >
+        
+
+
+        <div class="space"><h1 class="text-dark">Savvy Inn</h1></div>
+        <div class="space1">
+            <button  class="bn"><a href="{%url 'home'%}" style="text-decoration: none;">Home</a></button>
+            <button  class="bn"><a href="{%url 'about'%}" style="text-decoration: none;">About</a></button>
+            <button  class="bn"><a href="{%url 'menu'%}" style="text-decoration: none;">Menu</a></button>
+            <button  class="bn"><a href="{%url 'event'%}" style="text-decoration: none;" >Events</a></button>
+            <button class="bn"><a href="{%url 'chef'%}" style="text-decoration: none;">Chefs</a></button>
+            <button  class="bn"><a href="{%url 'gallery'%}" style="text-decoration: none;">Gallery</a></button>
+        </div>
+        <div class="space2"><button  class="butn"><a href="{%url 'book'%}"  style="text-decoration: none;">BOOK A TABLE</a></button>
+        </div>
+    </div>
+</div>
+<div>
+    {% block head %}
+    {% endblock  %}
+    {% block content %}
+    {%endblock%}
+
+    <hr>
+<footer class="foot" style="background-color: black;" >
+    <hr>
+    <div class="fot">
+    <div class="foot1">
+        <span style="font-size: 20px;font-family: 'Times New Roman', Times, serif;" >Savvy Inn</span><br>
+        The agency for impatient <br> hunger pangs
+
+
+        
+    </div>
+    <div class="foot2">
+       <span style="font-size: 20px;font-family: 'Times New Roman', Times, serif;"> Useful Links</span> <br>
+        <a href="{%url 'home'%}" style="text-decoration: none; color: white;">Home</a><br>
+        <a href="{%url 'about'%}" style="text-decoration: none;  color: white;">About Us</a><br>
+        <a href="{%url 'menu'%}" style="text-decoration: none;  color: white;">Menu</a><br>
+        <a href="{%url 'event'%}" style="text-decoration: none;  color: white;">Events</a><br>
+        <a href="{%url 'gallery'%}" style="text-decoration: none;  color: white;">Gallery</a><br>
+    </div>
+    <div class="foot3">
+        <span style="font-size: 20px;font-family: 'Times New Roman', Times, serif;">Our Services</span><br>
+        Table Services <br>
+        Counter Service <br>
+        Self-service <br>
+        Buffet Service <br>
+        Bar sevice <br>
+    </div>
+    <div class="foot4">
+        <span style="font-size: 20px;font-family: 'Times New Roman', Times, serif;">Contact Us</span><br>
+        <img src="" alt="" class="ftimg1"> @pokumu987 <br>
+        <img src="" alt="" class="ftimg2"> Peter Okumu <br>
+        <img src="" alt="" class="ftimg3"> okumu_wan <br>
+        <img src="" alt="" class="ftimg4"> 0114950840 <br>
+
+
+    </div>
+    
+</div> 
+<hr>
+<p style="text-align: center;color: white; background-color: black;">&copy; 2025 Savvy Inn. All rights reserverd</p>
+<hr>
+</footer>
+
+    
+</body>
+
+    
+</html>
