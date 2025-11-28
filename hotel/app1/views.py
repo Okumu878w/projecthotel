@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from .forms import orderform
+from .models import order
 # Create your views here.
 
 def home(request):
@@ -9,8 +11,18 @@ def about(request):
     return render(request , 'app1/about.html')
 
 def book(request):
-    return render(request , 'app1/book.html')
-
+    ord=orderform()
+    if request.method=="POST":
+        ord=orderform(request.POST)
+        if ord.is_valid():
+            ord.save()
+            return redirect("orders")
+    context={"orders":ord}
+    return render(request , 'app1/book.html',context)
+def orderdisplay(request):
+    products=order.objects.all()
+    context={"orders":products}
+    return render(request,'app1/display.html',context)
 
 
 def chef(request):
@@ -27,3 +39,26 @@ def gallery(request):
 
 def menu(request):
     return render(request , 'app1/menu.html' )
+
+
+def orderdispone(request,pk):
+    orders=order.objects.get(id=pk)
+
+
+    context={"orders":orders}
+    return render(request,'app1/menu.html',context)
+
+
+def update(request,pk):
+    orders=order.objects.get(id=pk)
+    ord=orderform(instance=orders)
+    if request.method=="POST":
+        ord=orderform(request.POST,instance=orders)
+        if ord.is_valid():
+            ord.save()
+            return redirect("orders")
+
+
+
+    context={"orders":ord}
+    return render(request,'app1/book.html',context)

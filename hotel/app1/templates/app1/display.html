@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block content %}
+<div>
+    {%for order in orders%}
+    <div>{{order.food}}</div>
+    <div>{{order.price}}</div>
+    <div>{{order.description}}</div>
+    <a href="{% url 'dispone' order.id %}">see more</a>
+    <a href="{% url 'update' order.id %}">update</a>
+    {%endfor%}
+</div>
+{% endblock  %}

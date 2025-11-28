@@ -1,4 +1,13 @@
 {% extends "main.html" %}
 {% block content %}
-<div>this is chef</div>
+<div>
+    hello
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{orders.as_p}}
+        <button type="submit">submit</button>
+
+    </form>
+</div>
 {% endblock  %}
