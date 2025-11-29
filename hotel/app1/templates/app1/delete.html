@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+{% block content %}
+<div>this is delete page</div>
+<div>are you sure you want to delete?</div>
+<form action=""method="POST">
+    {%csrf_token%}
+    <a href="{% url 'orders' %}">cancel</a>
+    <button type="submit">delete</button>
+</form>
+{% endblock  %}

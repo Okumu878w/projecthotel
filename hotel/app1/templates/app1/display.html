@@ -7,6 +7,7 @@
     <div>{{order.description}}</div>
     <a href="{% url 'dispone' order.id %}">see more</a>
     <a href="{% url 'update' order.id %}">update</a>
+    <a href="{% url 'delete' order.id %}">delete</a>
     {%endfor%}
 </div>
 {% endblock  %}

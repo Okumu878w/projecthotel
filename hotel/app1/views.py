@@ -62,3 +62,13 @@ def update(request,pk):
 
     context={"orders":ord}
     return render(request,'app1/book.html',context)
+
+def delete(request,pk):
+    orders=order.objects.get(id=pk)
+    if request.method=="POST":
+        orders.delete()
+        return redirect("orders")
+
+
+    context={"orders":orders}
+    return render(request,'app1/delete.html',context)
